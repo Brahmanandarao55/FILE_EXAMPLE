@@ -1,0 +1,16 @@
+package example_program
+
+import com.typesafe.config.ConfigFactory
+import java.sql.{Connection, DriverManager}
+
+object DatabaseConnection {
+  private val config = ConfigFactory.load().getConfig("database")
+  private val dbUrl = config.getString("url")
+  private val username = config.getString("username")
+  private val password = config.getString("password")
+
+  def getConnection: Connection = {
+    Class.forName("com.mysql.cj.jdbc.Driver")
+    DriverManager.getConnection(dbUrl, username, password)
+  }
+}
