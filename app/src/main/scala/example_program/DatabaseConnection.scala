@@ -5,12 +5,12 @@ import java.sql.{Connection, DriverManager}
 
 object DatabaseConnection {
   private val config = ConfigFactory.load().getConfig("database")
-  private val dbUrl = config.getString("url")
+  private val dbUrl = config.getString("Url")
   private val username = config.getString("username")
   private val password = config.getString("password")
 
   def getConnection: Connection = {
-    Class.forName("com.mysql.cj.jdbc.Driver")
+    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver")
     DriverManager.getConnection(dbUrl, username, password)
   }
 }

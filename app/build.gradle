@@ -25,9 +25,10 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
-    implementation 'mysql:mysql-connector-java:8.0.28'
+    implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre8'
 
     implementation 'com.typesafe:config:1.4.1'
+
     // Use Scalatest for testing our library
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.scalatest:scalatest_2.13:3.2.13'
